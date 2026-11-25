@@ -1,0 +1,21 @@
+# Virtual environments
+.venv/
+venv/
+ENV/
+
+# Byte-compiled / optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# macOS system files
+.DS_Store
+
+# IDE / Editor directories
+.vscode/
+.idea/
+
+# Distribution / packaging build artifacts
+build/
+dist/
+*.egg-info/
