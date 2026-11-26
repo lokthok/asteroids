@@ -4,8 +4,13 @@ from constants import SCREEN_WIDTH, SCREEN_HEIGHT
 from logger import log_state
 
 
+def delta_time(clock):
+    return clock.tick(60) / 1000
+
 def run_game():
     pygame.init()
+
+    # Initializing window
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     clock = pygame.time.Clock()
     dt = 0.0
@@ -14,7 +19,7 @@ def run_game():
     drawable = pygame.sprite.Group()
     Player.containers = (updatable, drawable)
 
-    player = Player(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2)
+    player = Player(x=SCREEN_WIDTH / 2, y=SCREEN_HEIGHT / 2)
 
     while True:
         log_state()
@@ -31,4 +36,4 @@ def run_game():
             obj.draw(screen)
         pygame.display.flip()
 
-        dt = clock.tick(60) / 1000
+        dt = delta_time(clock)
