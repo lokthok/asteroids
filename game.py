@@ -9,7 +9,7 @@ def delta_time(clock):
     return clock.tick(60) / 1000
 
 
-def game_loop(updatable, drawable, screen, clock):
+def game_loop(updatable, drawable, screen, clock, asteroids):
     dt = 0.0
 
     while True:
@@ -50,4 +50,4 @@ def run_game():
     player = Player(x=SCREEN_WIDTH / 2, y=SCREEN_HEIGHT / 2)
     asteroid_field = AsteroidField()
 
-    game_loop(updatable, drawable, screen, clock)
+    game_loop(updatable, drawable, screen, clock, asteroids)
