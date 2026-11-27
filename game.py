@@ -38,7 +38,7 @@ def game_loop(updatable, drawable, screen, clock, asteroids, player, shots):
             for shot in shots:
                 if asteroid.collides_with(shot):
                     log_event("asteroid_shot")
-                    asteroid.kill()
+                    asteroid.split()
                     shot.kill()
 
 
