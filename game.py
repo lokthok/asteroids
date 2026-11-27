@@ -35,6 +35,11 @@ def game_loop(updatable, drawable, screen, clock, asteroids, player, shots):
                 log_event("player_hit")
                 print("Game over!")
                 sys.exit()
+            for shot in shots:
+                if asteroid.collides_with(shot):
+                    log_event("asteroid_shot")
+                    asteroid.kill()
+                    shot.kill()
 
 
         pygame.display.flip()
